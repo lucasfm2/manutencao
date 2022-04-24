@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitar Manutencao</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function voltaInicio() {
+            window.location.replace("/");
+        }
+    </script>
+
+    <h1>Solicitacao</h1>
+    <form method="post">
+        ID: <input type="text" value="" name="id">
+        Solicitante: <input type="text" value="" name="solicitante">
+        Tipo: <select name="tipoManutencao">
+                <option value="Ar-condicionado">Ar-condicionado</option>
+                <option value="Computador">Computador</option>
+                <option value="Bancada">Bancada</option>
+            </select>
+        Laboratorio: <input type="text" value="" name="laboratorio">
+        Prioridade: <select name="prioridade">
+                <option value="baixa">Baixa</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+        </select>
+
+        <button type="submit">Confirmar</button>
+
+    </form>
+    <button onclick="voltaInicio()">Voltar</button>
+</body>
+</html>

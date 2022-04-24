@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitacoes de Manutencao</title>
+</head>
+<body>
+
+
+    <h1>Lista de Solicitacoes</h1>
+    <h3><a href="/solicitarManutencao">Solicitar Manutencao</a></h3>
+
+    <div th:each="manutencao : ${manutencoes}">
+        <div class="row">
+            <p>Identificador: <span th:text="${manutencao.id}"></span></p>
+            <p>Solicitante: <span th:text="${manutencao.solicitante}"></span></p>
+            <p>Tipo: <span th:text="${manutencao.tipoManutencao}"></span></p>
+            <p>Laboratorio: <span th:text="${manutencao.laboratorio}"></span></p>
+            <p>Prioridade: <span th:text="${manutencao.prioridade}"></span></p>
+            <td><a th:href="${#mvc.url('MC#deletarManutencao').arg(0, manutencao.id).build()}">Deletar</a></td>
+        </div>
+        <p>-----------------------------------------------------------</p>
+    </div>
+
+    <script>
+        var myLink = "/teste"
+        function deletar(id) {
+            return '/deletar/' + id;
+        }
+    </script>
+
+</body>
+</html>
